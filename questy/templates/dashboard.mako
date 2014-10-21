@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="${request.locale_name}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Kaede Studios">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kaede Studios">
 
-    <title></title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="${request.static_url('questy:static/bower_components/bootstrap/dist/css/bootstrap.min.css')}" />
 
-  </head>
+  <title></title>
 
-  <body>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//oss.maxcdn.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  </body>
+</head>
+<body>
+
+<!-- Scripts -->
+<script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
+</body>
 </html>

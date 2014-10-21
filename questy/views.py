@@ -6,3 +6,11 @@ from sqlalchemy.exc import DBAPIError
 from .models import (
     DBSession,
 )
+
+
+@view_config(
+    route_name='dashboard',
+    renderer='templates/dashboard.mako'
+)
+def dashboard(request):
+    return {}
