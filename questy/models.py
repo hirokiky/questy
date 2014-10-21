@@ -23,6 +23,28 @@ DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
 
 
+earned_achievement = Table(
+    'earned_achievement',
+    Base.metadata,
+
+    Column('adventurer_id', Integer, ForeignKey('adventurer.adventurer_id')),
+    Column('achievement_id', Integer, ForeignKey('achievement.achievement_id')),
+    Column('created_at', DateTime, server_default=func.now()),
+    Column('updated_at', DateTime, server_onupdate=func.now()),
+)
+
+
+class Achievement(Base):
+    __tablename__ = 'achievement'
+    achievement_id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+    description = Column(Text)
+    image_path = Column(String(255))
+    point = Column(Integer)
+    created_at = Column(DateTime, server_default=func.now())
+    updated_at = Column(DateTime, server_onupdate=func.now())
+
+
 follow = Table(
     'follow',
     Base.metadata,
@@ -67,33 +89,34 @@ class Adventurer(Base):
         secondaryjoin=(follow.c.following_id == adventurer_id),
         backref='followers',
     )
-
-
-class Achievement(Base):
-    __tablename__ = 'achievement'
-    achievement_id = Column(Integer, primary_key=True)
-    reward_id = Column(Integer, primary_key=True)
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime, server_onupdate=func.now())
-
-
-class EarnedAchievement(Base):
-    __tablename__ = 'earned_achievement'
-    earned_achievement_id = Column(Integer, primary_key=True)
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime, server_onupdate=func.now())
+    earned_achievements = relationship(
+        'Achievement',
+        secondary=earned_achievement,
+    )
+    arrivals = relationship('Arrival')
+    comments = relationship('Comment')
+    upvotes = relationship('Upvote')
+    downvotes = relationship('Downvote')
 
 
 class Page(Base):
     __tablename__ = 'page'
     page_id = Column(Integer, primary_key=True)
+    url = Column(String(4095), index=True)
+    title = Column(String(255))
+    summary = Column(Text)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
+
+    arrivals = relationship('Arrival')
+    comments = relationship('Comment')
 
 
 class Arrival(Base):
     __tablename__ = 'arrival'
     arrival_id = Column(Integer, primary_key=True)
+    page_id = Column(Integer, ForeignKey('page.page_id'))
+    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
 
@@ -101,13 +124,21 @@ class Arrival(Base):
 class Comment(Base):
     __tablename__ = 'comment'
     comment_id = Column(Integer, primary_key=True)
+    page_id = Column(Integer, ForeignKey('page.page_id'))
+    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
+    body = Column(Text)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
+
+    upvotes = relationship('Upvote')
+    downvotes = relationship('Downvote')
 
 
 class Upvote(Base):
     __tablename__ = 'upvote'
     upvote_id = Column(Integer, primary_key=True)
+    comment_id = Column(Integer, ForeignKey('comment.comment_id'))
+    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
 
@@ -115,5 +146,7 @@ class Upvote(Base):
 class Downvote(Base):
     __tablename__ = 'downvote'
     downvote_id = Column(Integer, primary_key=True)
+    comment_id = Column(Integer, ForeignKey('comment.comment_id'))
+    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
