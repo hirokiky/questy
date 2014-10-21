@@ -1,0 +1,18 @@
+{
+  "name": "questy",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hirokiky/questy",
+  "authors": [
+    "Hiroki KIYOHARA <hirokiky@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "questy/static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
