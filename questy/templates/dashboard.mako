@@ -48,42 +48,48 @@
   </nav>
 
   <div class="row">
-    <div class="stream col-md-9">
+    <div class="dashboard-stream col-md-9">
       <div class="page">
         <div class="page-detail">
-          <div class="page-summary"></div>
-          <div class="page-total-arrival"></div>
-          <div class="page-description"></div>
-          <div class="page-link">Readmore</div>
-        </div>
-        <div class="comments">
-          <div class="comment">
-            <div class="adventurer-icon"></div>
-            <div class="comment-body"></div>
-            <div class="reactions">
-              <div class="upvote"></div>
-              <div class="downvote"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <img class="page-summary" src="http://dummyimage.com/800x800" />
+              <div class="page-total-arrival">10000 arrival</div>
+            </div>
+            <div class="col-md-8">
+              <h2 class="page-title">Page title</h2>
+              <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
+              <a class="page-link">Readmore</a>
+            </div>
+          </div>
+          <div class="comments">
+            <div class="comment">
+              <div class="adventurer-icon"></div>
+              <div class="comment-body"></div>
+              <div class="reactions">
+                <div class="upvote"></div>
+                <div class="downvote"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div><!-- /stream -->
-    <div class="sidebar col-md-3">
-      <div class="adventurer-icon"></div>
-      <div class="adventurer-name"></div>
-      <div class="adventurer-playstyle"></div>
-      <div class="adventurer-achievements"></div>
-      <div class="adventurer-followings"></div>
-      <div class="adventurer-followers"></div>
-      <div class="adventurer-arrivals"></div>
-      <div class="adventurer-comments"></div>
-    </div><!-- /sidebar -->
+      </div><!-- /stream -->
+      <div class="sidebar col-md-3">
+        <div class="adventurer-icon"></div>
+        <div class="adventurer-name"></div>
+        <div class="adventurer-playstyle"></div>
+        <div class="adventurer-achievements"></div>
+        <div class="adventurer-followings"></div>
+        <div class="adventurer-followers"></div>
+        <div class="adventurer-arrivals"></div>
+        <div class="adventurer-comments"></div>
+      </div><!-- /sidebar -->
+    </div>
+
   </div>
 
-</div>
-
-<!-- Scripts -->
-<script src="${request.static_url('questy:static/bower_components/jquery/dist/jquery.min.js')}"></script>
-<script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
+  <!-- Scripts -->
+  <script src="${request.static_url('questy:static/bower_components/jquery/dist/jquery.min.js')}"></script>
+  <script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
 </body>
 </html>
