@@ -6,6 +6,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="${request.static_url('questy:static/bower_components/bootstrap/dist/css/bootstrap.min.css')}" />
+  <link rel="stylesheet" href="${request.static_url('questy:static/css/main.css')}" />
 
   <title></title>
 
@@ -14,7 +15,7 @@
 
 <div class="container">
 
-## Global Header
+        ## Global Header
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -44,7 +45,41 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
+  </nav>
+
+  <div class="row">
+    <div class="stream col-md-9">
+      <div class="page">
+        <div class="page-detail">
+          <div class="page-summary"></div>
+          <div class="page-total-arrival"></div>
+          <div class="page-description"></div>
+          <div class="page-link">Readmore</div>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="adventurer-icon"></div>
+            <div class="comment-body"></div>
+            <div class="reactions">
+              <div class="upvote"></div>
+              <div class="downvote"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /stream -->
+    <div class="sidebar col-md-3">
+      <div class="adventurer-icon"></div>
+      <div class="adventurer-name"></div>
+      <div class="adventurer-playstyle"></div>
+      <div class="adventurer-achievements"></div>
+      <div class="adventurer-followings"></div>
+      <div class="adventurer-followers"></div>
+      <div class="adventurer-arrivals"></div>
+      <div class="adventurer-comments"></div>
+    </div><!-- /sidebar -->
+  </div>
+
 </div>
 
 <!-- Scripts -->
