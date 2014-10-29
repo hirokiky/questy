@@ -104,7 +104,8 @@ class Page(Base):
     page_id = Column(Integer, primary_key=True)
     url = Column(String(4095), index=True)
     title = Column(String(255))
-    summary = Column(Text)
+    summary_image_url = Column(String(4095))
+    description = Column(Text)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
 
