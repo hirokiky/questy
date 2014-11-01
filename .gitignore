@@ -3,6 +3,7 @@
 *.egg
 *.db
 *.sw?
+*.sqlite
 .tox
 .coverage
 dist

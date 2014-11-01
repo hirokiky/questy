@@ -4,6 +4,7 @@ from sqlalchemy import (
     ForeignKey,
     Table,
 
+    Boolean,
     DateTime,
     Enum,
     Integer,
@@ -82,6 +83,7 @@ class User(Base):
     name = Column(String(15), index=True, unique=True)
     email = Column(String(255), index=True, unique=True)
     password = Column(String(32))
+    admin = Column(Boolean, default=False)
     style = Column(Enum('C', 'H', name='style_types'))
     icon_path = Column(String(255))
     bio = Column(Text)
@@ -92,7 +94,7 @@ class User(Base):
     updated_at = Column(DateTime, server_onupdate=func.now())
 
     followings = relationship(
-        'user',
+        'User',
         secondary=follow,
         primaryjoin=(follow.c.follower_id == user_id),
         secondaryjoin=(follow.c.following_id == user_id),
