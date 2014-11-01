@@ -6,6 +6,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="${request.static_url('questy:static/bower_components/bootstrap/dist/css/bootstrap.min.css')}" />
+  <link rel="stylesheet" href="${request.static_url('questy:static/css/nonresp.css')}" />
   <link rel="stylesheet" href="${request.static_url('questy:static/css/main.css')}" />
 
   <title></title>
@@ -19,12 +20,6 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="#">Questy</a>
     </div>
 
@@ -48,16 +43,16 @@
   </nav>
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-xs-9">
       <div class="dashboard-stream">
         <div class="page">
           <div class="page-detail">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-xs-4">
                 <img class="page-summary img-responsible img-thumbnail" src="http://dummyimage.com/800x800" />
                 <div class="page-total-arrival">10000 arrival</div>
               </div>
-              <div class="col-md-8">
+              <div class="col-xs-8">
                 <h2 class="page-title">Page title</h2>
                 <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
                 <a class="page-link">Readmore</a>
@@ -67,17 +62,17 @@
           <div class="comments">
             <div class="comment">
               <div class="row">
-                <div class="col-md-2 col-md-offset-2">
+                <div class="col-xs-2 col-xs-offset-2">
                   <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/600x600" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-xs-8">
                   <div class="comment-body">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</div>
                   <div class="reactions">
                     <div class="row">
-                      <div class="col-md-2">
+                      <div class="col-xs-2">
                         <div class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span><span class="vote-count">8</span></div>
                       </div>
-                      <div class="col-md-2">
+                      <div class="col-xs-2">
                         <div class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span><span class="vote-count">3</span></div>
                       </div>
                     </div>
@@ -88,14 +83,14 @@
           </div><!-- /comment -->
         </div><!-- /comments -->
       </div><!-- /dashboard-stream -->
-    </div><!-- /col-md-9 -->
-    <div class="col-md-3">
+    </div><!-- /col-xs-9 -->
+    <div class="col-xs-3">
       <div class="sidebar">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-xs-4">
             <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/300x300" />
           </div>
-          <div class="col-md-8">
+          <div class="col-xs-8">
             <div class="adventurer-name">Hiroki KIYOHARA</div>
             <div class="adventurer-playstyle">Casual</div>
           </div>
@@ -106,7 +101,7 @@
         <div class="adventurer-arrivals">801 arrival</div>
         <div class="adventurer-comments">201 comment</div>
       </div><!-- /sidebar -->
-    </div><!-- /col-md-3 -->
+    </div><!-- /col-xs-3 -->
   </div>
 </div>
 <!-- Scripts -->
