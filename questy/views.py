@@ -14,12 +14,12 @@ from questy.models import (
     renderer='templates/dashboard.mako'
 )
 def dashboard(request):
-    User = request.User
+    user = request.User
     session = DBSession()
     session.query(Page).\
         join(Arrival, Arrival.page_id == Page.page_id).\
         join(User, (User.User_id == Arrival.User_id) and
-                         (follow.c.foller_id == User.User_id) and
-                         (follow.c.following_id == User.User_id))
+                   (follow.c.foller_id == User.User_id) and
+                   (follow.c.following_id == User.User_id))
 
     return {}
