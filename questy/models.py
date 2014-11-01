@@ -1,3 +1,4 @@
+from pyramid.security import Allow, Everyone
 from sqlalchemy import (
     Column,
     ForeignKey,
@@ -21,6 +22,14 @@ from zope.sqlalchemy import ZopeTransactionExtension
 
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
+
+
+class RootFactory(object):
+    __acl__ = [(Allow, Everyone, 'view'),
+               (Allow, 'group:loginusers', 'edit')]
+
+    def __init__(self, request):
+        pass
 
 
 earned_achievement = Table(

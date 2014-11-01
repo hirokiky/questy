@@ -30,11 +30,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${user_email}<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Setting</a></li>
             <li class="divider"></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="${request.route_path('logout')}">Logout</a></li>
           </ul>
         </li>
       </ul>
