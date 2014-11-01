@@ -48,48 +48,69 @@
   </nav>
 
   <div class="row">
-    <div class="dashboard-stream col-md-9">
-      <div class="page">
-        <div class="page-detail">
-          <div class="row">
-            <div class="col-md-4">
-              <img class="page-summary" src="http://dummyimage.com/800x800" />
-              <div class="page-total-arrival">10000 arrival</div>
-            </div>
-            <div class="col-md-8">
-              <h2 class="page-title">Page title</h2>
-              <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
-              <a class="page-link">Readmore</a>
+    <div class="col-md-9">
+      <div class="dashboard-stream">
+        <div class="page">
+          <div class="page-detail">
+            <div class="row">
+              <div class="col-md-4">
+                <img class="page-summary img-responsible img-thumbnail" src="http://dummyimage.com/800x800" />
+                <div class="page-total-arrival">10000 arrival</div>
+              </div>
+              <div class="col-md-8">
+                <h2 class="page-title">Page title</h2>
+                <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
+                <a class="page-link">Readmore</a>
+              </div>
             </div>
           </div>
           <div class="comments">
             <div class="comment">
-              <div class="adventurer-icon"></div>
-              <div class="comment-body"></div>
-              <div class="reactions">
-                <div class="upvote"></div>
-                <div class="downvote"></div>
+              <div class="row">
+                <div class="col-md-2 col-md-offset-2">
+                  <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/600x600" />
+                </div>
+                <div class="col-md-8">
+                  <div class="comment-body">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</div>
+                  <div class="reactions">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span><span class="vote-count">8</span></div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span><span class="vote-count">3</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div><!-- /comment -->
+        </div><!-- /comments -->
+      </div><!-- /dashboard-stream -->
+    </div><!-- /col-md-9 -->
+    <div class="col-md-3">
+      <div class="sidebar">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/300x300" />
+          </div>
+          <div class="col-md-8">
+            <div class="adventurer-name">Hiroki KIYOHARA</div>
+            <div class="adventurer-playstyle">Casual</div>
           </div>
         </div>
-      </div><!-- /stream -->
-      <div class="sidebar col-md-3">
-        <div class="adventurer-icon"></div>
-        <div class="adventurer-name"></div>
-        <div class="adventurer-playstyle"></div>
-        <div class="adventurer-achievements"></div>
-        <div class="adventurer-followings"></div>
-        <div class="adventurer-followers"></div>
-        <div class="adventurer-arrivals"></div>
-        <div class="adventurer-comments"></div>
+        <div class="adventurer-achievements">9820 point</div>
+        <div class="adventurer-followings">121 following</div>
+        <div class="adventurer-followers">132 following</div>
+        <div class="adventurer-arrivals">801 arrival</div>
+        <div class="adventurer-comments">201 comment</div>
       </div><!-- /sidebar -->
-    </div>
-
+    </div><!-- /col-md-3 -->
   </div>
-
-  <!-- Scripts -->
-  <script src="${request.static_url('questy:static/bower_components/jquery/dist/jquery.min.js')}"></script>
-  <script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
+</div>
+<!-- Scripts -->
+<script src="${request.static_url('questy:static/bower_components/jquery/dist/jquery.min.js')}"></script>
+<script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
 </body>
 </html>
