@@ -8,6 +8,10 @@ from questy.models import (
 
 
 def following_stream(user):
+    """ Page stream of following.
+    This function returns list of pages which has been arrived
+    by people who followed by the 'user'.
+    """
     return DBSession.query(Page).\
         join(Arrival).\
         join(User).\
