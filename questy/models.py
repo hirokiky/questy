@@ -109,6 +109,12 @@ class User(Base):
     upvotes = relationship('Upvote')
     downvotes = relationship('Downvote')
 
+    logged_in = True
+
+
+class AnnonymousUser(object):
+    logged_in = False
+
 
 class Page(Base):
     __tablename__ = 'page'

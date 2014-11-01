@@ -1,7 +1,7 @@
 import colander
 
 from pyramid import security
-from pyramid.security import remember, forget, authenticated_userid
+from pyramid.security import remember, forget
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound, HTTPBadRequest
 
@@ -15,8 +15,7 @@ from questy.security import validate_password
     effective_principals=(security.Authenticated,)
 )
 def dashboard(request):
-    user_email = authenticated_userid(request)
-    return {'user_email': user_email}
+    return {'user': request.user}
 
 
 @view_config(

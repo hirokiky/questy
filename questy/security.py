@@ -1,8 +1,9 @@
 import hashlib
-
 from sqlalchemy.orm.exc import NoResultFound
 
-from questy.models import DBSession, User
+from pyramid.security import authenticated_userid
+
+from questy.models import DBSession, User, AnnonymousUser
 
 
 def make_hashed_password(password):
@@ -38,3 +39,13 @@ def groupfinder(email, request):
         return ['group:general', 'group:admin']
     else:
         return ['group:general']
+
+
+def get_user(request):
+    email = authenticated_userid(request)
+    try:
+        user = DBSession.query(User).filter(User.email == email).one()
+    except NoResultFound:
+        return AnnonymousUser()
+
+    return user

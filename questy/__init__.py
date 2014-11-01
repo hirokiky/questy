@@ -6,7 +6,7 @@ from questy.models import (
     DBSession,
     Base,
 )
-from questy.security import groupfinder
+from questy.security import groupfinder, get_user
 
 
 def main(global_config, **settings):
@@ -24,7 +24,8 @@ def main(global_config, **settings):
     config.set_authentication_policy(authn_policy)
     config.set_authorization_policy(authz_policy)
 
-    config.include('pyramid_chameleon')
+    config.add_request_method(get_user, 'user', reify=True)
+
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('top', '/')
     config.add_route('login', '/login/')
