@@ -15,7 +15,7 @@ from questy.security import validate_password
     effective_principals=(security.Authenticated,)
 )
 def dashboard(request):
-    return {'user': request.user}
+    return {}
 
 
 @view_config(
