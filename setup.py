@@ -46,4 +46,5 @@ setup(name='questy',
       [console_scripts]
       initialize_questy_db = questy.scripts.initializedb:main
       create_questy_user = questy.scripts.createuser:main
+      makelots = questy.scripts.makelots:main
       """)
