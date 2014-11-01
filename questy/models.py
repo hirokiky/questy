@@ -27,7 +27,7 @@ earned_achievement = Table(
     'earned_achievement',
     Base.metadata,
 
-    Column('adventurer_id', Integer, ForeignKey('adventurer.adventurer_id')),
+    Column('user_id', Integer, ForeignKey('user.user_id')),
     Column('achievement_id', Integer, ForeignKey('achievement.achievement_id')),
     Column('created_at', DateTime, server_default=func.now()),
     Column('updated_at', DateTime, server_onupdate=func.now()),
@@ -49,8 +49,8 @@ follow = Table(
     'follow',
     Base.metadata,
 
-    Column('follower_id', Integer, ForeignKey('adventurer.adventurer_id')),
-    Column('following_id', Integer, ForeignKey('adventurer.adventurer_id')),
+    Column('follower_id', Integer, ForeignKey('user.user_id')),
+    Column('following_id', Integer, ForeignKey('user.user_id')),
     Column('created_at', DateTime, server_default=func.now()),
     Column('updated_at', DateTime, server_onupdate=func.now()),
 )
@@ -67,9 +67,9 @@ STYLE_CODE_MAPPING = {
 }
 
 
-class Adventurer(Base):
-    __tablename__ = 'adventurer'
-    adventurer_id = Column(Integer, primary_key=True)
+class User(Base):
+    __tablename__ = 'user'
+    user_id = Column(Integer, primary_key=True)
     name = Column(String(15), index=True, unique=True)
     email = Column(String(255), index=True, unique=True)
     password = Column(String(32))
@@ -83,10 +83,10 @@ class Adventurer(Base):
     updated_at = Column(DateTime, server_onupdate=func.now())
 
     followings = relationship(
-        'Adventurer',
+        'user',
         secondary=follow,
-        primaryjoin=(follow.c.follower_id == adventurer_id),
-        secondaryjoin=(follow.c.following_id == adventurer_id),
+        primaryjoin=(follow.c.follower_id == user_id),
+        secondaryjoin=(follow.c.following_id == user_id),
         backref='followers',
     )
     earned_achievements = relationship(
@@ -117,7 +117,7 @@ class Arrival(Base):
     __tablename__ = 'arrival'
     arrival_id = Column(Integer, primary_key=True)
     page_id = Column(Integer, ForeignKey('page.page_id'))
-    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
+    user_id = Column(Integer, ForeignKey('user.user_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
 
@@ -126,7 +126,7 @@ class Comment(Base):
     __tablename__ = 'comment'
     comment_id = Column(Integer, primary_key=True)
     page_id = Column(Integer, ForeignKey('page.page_id'))
-    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
+    user_id = Column(Integer, ForeignKey('user.user_id'))
     body = Column(Text)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
@@ -139,7 +139,7 @@ class Upvote(Base):
     __tablename__ = 'upvote'
     upvote_id = Column(Integer, primary_key=True)
     comment_id = Column(Integer, ForeignKey('comment.comment_id'))
-    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
+    user_id = Column(Integer, ForeignKey('user.user_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())
 
@@ -148,6 +148,6 @@ class Downvote(Base):
     __tablename__ = 'downvote'
     downvote_id = Column(Integer, primary_key=True)
     comment_id = Column(Integer, ForeignKey('comment.comment_id'))
-    adventurer_id = Column(Integer, ForeignKey('adventurer.adventurer_id'))
+    user_id = Column(Integer, ForeignKey('user.user_id'))
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_onupdate=func.now())

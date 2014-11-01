@@ -63,7 +63,7 @@
             <div class="comment">
               <div class="row">
                 <div class="col-xs-2 col-xs-offset-2">
-                  <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/600x600" />
+                  <img class="user-icon img-responsible img-thumbnail" src="http://dummyimage.com/600x600" />
                 </div>
                 <div class="col-xs-8">
                   <div class="comment-body">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</div>
@@ -88,18 +88,18 @@
       <div class="sidebar">
         <div class="row">
           <div class="col-xs-4">
-            <img class="adventurer-icon img-responsible img-thumbnail" src="http://dummyimage.com/300x300" />
+            <img class="user-icon img-responsible img-thumbnail" src="http://dummyimage.com/300x300" />
           </div>
           <div class="col-xs-8">
-            <div class="adventurer-name">Hiroki KIYOHARA</div>
-            <div class="adventurer-playstyle">Casual</div>
+            <div class="user-name">Hiroki KIYOHARA</div>
+            <div class="user-playstyle">Casual</div>
           </div>
         </div>
-        <div class="adventurer-achievements">9820 point</div>
-        <div class="adventurer-followings">121 following</div>
-        <div class="adventurer-followers">132 following</div>
-        <div class="adventurer-arrivals">801 arrival</div>
-        <div class="adventurer-comments">201 comment</div>
+        <div class="user-achievements">9820 point</div>
+        <div class="user-followings">121 following</div>
+        <div class="user-followers">132 following</div>
+        <div class="user-arrivals">801 arrival</div>
+        <div class="user-comments">201 comment</div>
       </div><!-- /sidebar -->
     </div><!-- /col-xs-3 -->
   </div>
