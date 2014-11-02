@@ -7,7 +7,7 @@ from questy.models import DBSession
 
 class TestFollowingArrivalStream(unittest.TestCase):
     def _callFUT(self, *args, **kwargs):
-        from questy.user import following_arrival_stream
+        from questy.stream import following_arrival_stream
         return following_arrival_stream(*args, **kwargs)
 
     def setUp(self):
@@ -59,7 +59,7 @@ class TestFollowingArrivalStream(unittest.TestCase):
 
 class TestFollowingCommentStream(unittest.TestCase):
     def _callFUT(self, *args, **kwargs):
-        from questy.user import following_comment_stream
+        from questy.stream import following_comment_stream
         return following_comment_stream(*args, **kwargs)
 
     def setUp(self):
