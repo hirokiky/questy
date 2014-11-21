@@ -4,3 +4,8 @@ def setup_db():
     engine = create_engine('sqlite://')
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
+
+
+def setup_redis():
+    from questy import redisio
+    redisio.set_redis_client('fakeredis.FakeStrictRedis')
