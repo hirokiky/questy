@@ -27,7 +27,7 @@ Base = declarative_base()
 
 class RootFactory(object):
     __acl__ = [(Allow, Everyone, 'view'),
-               (Allow, 'group:loginusers', 'edit')]
+               (Allow, 'group:general', 'edit')]
 
     def __init__(self, request):
         pass
