@@ -7,6 +7,7 @@ from questy.models import (
     Base,
 )
 from questy.security import groupfinder, get_user
+from questy import redisio
 
 
 def main(global_config, **settings):
@@ -15,6 +16,12 @@ def main(global_config, **settings):
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
+
+    redisio.set_redis_client(settings['redis.client'],
+                             host=settings['redis.host'],
+                             port=settings['redis.port'],
+                             db=settings['redis.db'])
+
     authn_policy = AuthTktAuthenticationPolicy(
         'sosecret', callback=groupfinder, hashalg='sha512'
     )

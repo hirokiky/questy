@@ -19,6 +19,7 @@ requires = [
     'zope.sqlalchemy',
     'waitress',
     'colander',
+    'redis',
 ]
 
 setup(name='questy',
