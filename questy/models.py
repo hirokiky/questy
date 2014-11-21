@@ -27,7 +27,12 @@ Base = declarative_base()
 
 class RootFactory(object):
     __acl__ = [(Allow, Everyone, 'view'),
-               (Allow, 'group:general', 'edit')]
+               (Allow, 'group:general', 'arrive'),
+               (Allow, 'group:general', 'comment'),
+               (Allow, 'group:general', 'upvote'),
+               (Allow, 'group:general', 'downvote'),
+               (Allow, 'group:general', 'follow'),
+               (Allow, 'group:general', 'unfollow')]
 
     def __init__(self, request):
         pass

@@ -1,29 +1,11 @@
 import colander
 
-from pyramid import security
 from pyramid.security import remember, forget
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound, HTTPBadRequest
 
 from questy.schema import LoginSchema
 from questy.security import validate_password
-
-
-@view_config(
-    route_name='top',
-    renderer='templates/dashboard.mako',
-    effective_principals=(security.Authenticated,)
-)
-def dashboard(request):
-    return {}
-
-
-@view_config(
-    route_name='top',
-    renderer='templates/top.mako',
-)
-def top(request):
-    return {}
 
 
 @view_config(
