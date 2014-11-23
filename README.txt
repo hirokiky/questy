@@ -6,7 +6,9 @@ Getting Started
 
 - cd <directory containing this file>
 
-- bower install
+- npm install
+
+- webpack
 
 - $VENV/bin/python setup.py develop
 
