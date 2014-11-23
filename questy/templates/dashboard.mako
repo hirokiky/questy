@@ -5,7 +5,7 @@
   <meta name="author" content="Kaede Studios">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="${request.static_url('questy:static/bower_components/bootstrap/dist/css/bootstrap.min.css')}" />
+  <link rel="stylesheet" href="${request.static_url('questy:static/css/bootstrap.css')}" />
   <link rel="stylesheet" href="${request.static_url('questy:static/css/nonresp.css')}" />
   <link rel="stylesheet" href="${request.static_url('questy:static/css/main.css')}" />
 
@@ -53,7 +53,7 @@
                 <div class="page-total-arrival">10000 arrival</div>
               </div>
               <div class="col-xs-8">
-                <h2 class="page-title">Page title</h2>
+                <h2 class="page-title" data-bind="text: pagetitle"></h2>
                 <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
                 <a class="page-link">Readmore</a>
               </div>
@@ -105,7 +105,8 @@
   </div>
 </div>
 <!-- Scripts -->
-<script src="${request.static_url('questy:static/bower_components/jquery/dist/jquery.min.js')}"></script>
-<script src="${request.static_url('questy:static/bower_components/bootstrap/dist/js/bootstrap.min.js')}"></script>
+<script src="${request.static_url('questy:static/js/libs/jquery.min.js')}"></script>
+<script src="${request.static_url('questy:static/js/libs/bootstrap.min.js')}"></script>
+<script src="${request.static_url('questy:static/js/app.js')}"></script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+{
+  "name": "questy",
+  "version": "0.0.0",
+  "description": "questy",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hirokiky/questy.git"
+  },
+  "keywords": [
+    "web"
+  ],
+  "author": "Hiroki KIYOHARA",
+  "license": "MIT",
+  "readmeFilename": "README.txt",
+  "gitHead": "7885881cc5efc6b014f1efd3ca24a61681ff1e77",
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "knockout": "~3.2.0",
+    "pagerjs": "git://github.com/finnsson/pagerjs.git#1.0.1",
+    "webpack": "~1.4.13",
+    "underscore": "~1.7.0"
+  },
+  "devDependencies": {
+    "imports-loader": "~0.6.3"
+  }
+}
