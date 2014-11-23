@@ -20,9 +20,9 @@
   "dependencies": {
     "bootstrap": "~3.3.1",
     "knockout": "~3.2.0",
-    "pagerjs": "git://github.com/finnsson/pagerjs.git#1.0.1",
     "webpack": "~1.4.13",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "pagerjs": "~1.0.0"
   },
   "devDependencies": {
     "imports-loader": "~0.6.3"
