@@ -15,7 +15,7 @@ class PageJSONDetailAdapter(object):
 
     def __json__(self, request):
         return {'page_id': self.page.page_id,
-                'url': self.page.url,
+                'page_url': self.page.page_url,
                 'title': self.page.title,
                 'summary_image_url': self.page.summary_image_url,
                 'description': self.page.description,

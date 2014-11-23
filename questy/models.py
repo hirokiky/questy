@@ -92,7 +92,7 @@ class User(Base):
     style = Column(Enum('C', 'H', name='style_types'))
     icon_path = Column(String(255))
     bio = Column(Text)
-    url = Column(String(255))
+    user_url = Column(String(255))
     location = Column(String(3))  # ISO3166
     language = Column(String(3))  # ISO639
     created_at = Column(DateTime, server_default=func.now())
@@ -124,7 +124,7 @@ class AnnonymousUser(object):
 class Page(Base):
     __tablename__ = 'page'
     page_id = Column(Integer, primary_key=True)
-    url = Column(String(4095), unique=True, index=True)
+    page_url = Column(String(4095), unique=True, index=True)
     title = Column(String(255))
     summary_image_url = Column(String(4095))
     description = Column(Text)

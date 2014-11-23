@@ -8,7 +8,17 @@ from pyramid.view import view_config
     permission='comment',
 )
 def comment(request):
-    return {}
+    return {
+        'message': "OK",
+        'comment': {
+            'comment_id': 1,
+            'page': '/api/pages/1',
+            'user': '/api/users/1',
+            'body': 'body',
+            'created_at': '2014-11-05T00:00:00+00:00',
+            'updated_at': '2014-11-05T00:00:00+00:00',
+        }
+    }
 
 
 @view_config(
@@ -17,8 +27,13 @@ def comment(request):
     request_method='GET',
     permission='view',
 )
-def list_comments():
-    return {}
+def list_comments(request):
+    return {
+        'message': "OK",
+        'comments': [
+            {'url': '/api/comments/1'},
+        ]
+    }
 
 
 @view_config(
@@ -26,25 +41,77 @@ def list_comments():
     renderer='json',
     permission='view',
 )
-def detail_comment():
-    return {}
+def detail_comment(request):
+    return {
+        'message': "OK",
+        'comment': {
+            'comment_id': 1,
+            'page': '/api/pages/1',
+            'user': '/api/users/1',
+            'body': 'body',
+            'upvote_count': 20,
+            'downvote_count': 10,
+            'created_at': '2014-11-05T00:00:00+00:00',
+            'updated_at': '2014-11-05T00:00:00+00:00',
+        }
+    }
 
 
 @view_config(
-    route_name='upvote',
+    route_name='upvotes',
     renderer='json',
     request_method='POST',
     permission='upvote',
 )
-def upvote():
-    return {}
+def upvote(request):
+    return {
+        'message': "OK",
+        'comment': {
+            'url': '/api/comments/1',
+        }
+    }
 
 
 @view_config(
-    route_name='downvote',
+    route_name='downvotes',
     renderer='json',
     request_method='POST',
     permission='downvote',
 )
-def downvote():
-    pass
+def downvote(request):
+    return {
+        'message': "OK",
+        'comment': {
+            'url': '/api/comments/1',
+        }
+    }
+
+
+@view_config(
+    route_name='upvotes',
+    renderer='json',
+    request_method='GET',
+    permission='view',
+)
+def list_upvotes(request):
+    return {
+        'message': "OK",
+        'users': [
+            {'url': '/api/users/1'},
+        ]
+    }
+
+
+@view_config(
+    route_name='downvotes',
+    renderer='json',
+    request_method='GET',
+    permission='view',
+)
+def list_downvotes(request):
+    return {
+        'message': "OK",
+        'users': [
+            {'url': '/api/users/1'},
+        ]
+    }

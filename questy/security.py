@@ -22,11 +22,10 @@ def set_password(user: User, password: str):
 def validate_password(email, password):
     hashed_password = make_hashed_password(password)
 
-    q = DBSession.query(User).filter(
+    return DBSession.query(User).filter(
         (User.email == email) &
         (User.password == hashed_password)
-    )
-    return DBSession.query(q.exists()).one()[0]
+    ).count() > 0
 
 
 def groupfinder(email, request):
