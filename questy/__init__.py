@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.config import Configurator
@@ -6,8 +8,11 @@ from questy.models import (
     DBSession,
     Base,
 )
+from pyramid.renderers import JSON
+
 from questy.security import groupfinder, get_user
 from questy import redisio
+from questy import renderers
 
 
 def main(global_config, **settings):
@@ -32,6 +37,10 @@ def main(global_config, **settings):
     config.set_authorization_policy(authz_policy)
 
     config.add_request_method(get_user, 'user', reify=True)
+
+    json_renderer = JSON()
+    json_renderer.add_adapter(datetime, renderers.datetime_adapter)
+    config.add_renderer('json', json_renderer)
 
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('top', '/')

@@ -124,7 +124,7 @@ class AnnonymousUser(object):
 class Page(Base):
     __tablename__ = 'page'
     page_id = Column(Integer, primary_key=True)
-    url = Column(String(4095), index=True)
+    url = Column(String(4095), unique=True, index=True)
     title = Column(String(255))
     summary_image_url = Column(String(4095))
     description = Column(Text)
