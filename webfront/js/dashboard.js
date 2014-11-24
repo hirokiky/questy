@@ -1,7 +1,16 @@
+var $ = require('jquery');
 var ko = require('knockout');
+var pager = require('pagerjs');
 
-function MyViewModel() {
-  var self = this;
-  self.pagetitle = ko.observable('Page Title');
-}
-ko.applyBindings(new MyViewModel());
+
+$(function() {
+  pager.Href.hash = '#!/';
+
+  var viewModel = {
+    pagetitle: "Page Title"
+  };
+  pager.extendWithPage(viewModel);
+  window.VW = viewModel;
+  ko.applyBindings(viewModel);
+  pager.start();
+});

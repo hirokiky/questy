@@ -10,12 +10,10 @@ module.exports = {
     resolveLoader: {
         root: path.join(__dirname, "node_modules")
     },
-    // plugins: [
-    //    new webpack.optimize.UglifyJsPlugin({minimize: true})
-    //],
     module: {
         loaders: [
-            {test: /knockout\/build\/output\/knockout-latest\.debug\.js/, loader: 'imports?require=>__webpack_require__'}  // For Knockout.js
+            {test: /knockout\/build\/output\/knockout-latest\.debug\.js/, loader: 'imports?require=>__webpack_require__'},  // For Knockout.js
+            {test: /pager\.js/, loader: 'imports?$=>require("jquery"),ko=>require("knockout")!exports?window.pager'}  // For pagerjs
         ],
         noParse: [
             /knockout\/build\/output\/knockout-latest\.debug\.js/  // For Knockout.js
