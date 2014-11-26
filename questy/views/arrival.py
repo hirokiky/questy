@@ -1,10 +1,10 @@
-import colander
-from pyramid.httpexceptions import HTTPBadRequest
+# import colander
+# from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 
-from questy.arrival import create_arrival_and_or_page, arrival_pages
-from questy.resources import PageJSONListAdapter
-from questy.schema import ArriveSchema
+# from questy.arrival import create_arrival_and_or_page, arrival_pages
+# from questy.resources import PageJSONListAdapter
+# from questy.schema import ArriveSchema
 
 
 @view_config(
