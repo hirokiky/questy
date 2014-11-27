@@ -43,7 +43,6 @@ def main(global_config, **settings):
     config.add_renderer('json', json_renderer)
 
     config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('top', '/')
     config.add_route('login', '/login/')
     config.add_route('logout', '/logout/')
 
@@ -62,5 +61,8 @@ def main(global_config, **settings):
     config.add_route('unfollow', '/api/users/{user_id:\d+}/unfollow')
     config.add_route('followers', '/api/users/{user_id:\d+}/followers')
     config.add_route('followings', '/api/users/{user_id:\d+}/followings')
+
+    config.add_route('top', '/*path')
+
     config.scan()
     return config.make_wsgi_app()

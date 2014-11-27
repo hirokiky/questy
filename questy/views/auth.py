@@ -27,7 +27,7 @@ def login(request):
         return {'message': 'Failed Login'}
 
     headers = remember(request, email)
-    return HTTPFound(request.route_path('top'), headers=headers)
+    return HTTPFound(request.route_path('top', path=[]), headers=headers)
 
 
 @view_config(
@@ -36,4 +36,4 @@ def login(request):
 )
 def logout(request):
     headers = forget(request)
-    return HTTPFound(request.route_path('top'), headers=headers)
+    return HTTPFound(request.route_path('top', path=[]), headers=headers)

@@ -40,74 +40,17 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-  <div data-bind="page: {id: 'start', title: 'Dashboard'">
-    <div class="row">
-      <div class="col-xs-9">
-        <div class="dashboard-stream">
-          <div class="page">
-            <div class="page-detail">
-              <div class="row">
-                <div class="col-xs-4">
-                  <img class="page-summary img-responsible img-thumbnail" src="http://dummyimage.com/800x800" />
-                  <div class="page-total-arrival">10000 arrival</div>
-                </div>
-                <div class="col-xs-8">
-                  <h2 class="page-title" data-bind="text: pagetitle"></h2>
-                  <div class="page-description">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ...</div>
-                  <a class="page-link">Readmore</a>
-                </div>
-              </div>
-            </div>
-            <div class="comments">
-              <div class="comment">
-                <div class="row">
-                  <div class="col-xs-2 col-xs-offset-2">
-                    <img class="user-icon img-responsible img-thumbnail" src="http://dummyimage.com/600x600" />
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="comment-body">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</div>
-                    <div class="reactions">
-                      <div class="row">
-                        <div class="col-xs-2">
-                          <div class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span><span class="vote-count">8</span></div>
-                        </div>
-                        <div class="col-xs-2">
-                          <div class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span><span class="vote-count">3</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- /comment -->
-          </div><!-- /comments -->
-        </div><!-- /dashboard-stream -->
-      </div><!-- /col-xs-9 -->
-      <div class="col-xs-3">
-        <div class="sidebar">
-          <div class="row">
-            <div class="col-xs-4">
-              <img class="user-icon img-responsible img-thumbnail" src="http://dummyimage.com/300x300" />
-            </div>
-            <div class="col-xs-8">
-              <div class="user-name">Hiroki KIYOHARA</div>
-              <div class="user-playstyle">Casual</div>
-            </div>
-          </div>
-          <div class="user-achievements">9820 point</div>
-          <div class="user-followings">121 following</div>
-          <div class="user-followers">132 following</div>
-          <div class="user-arrivals">801 arrival</div>
-          <div class="user-comments">201 comment</div>
-        </div><!-- /sidebar -->
-      </div><!-- /col-xs-3 -->
-    </div>
+  <div data-bind="page: {id: 'dashboard', title: 'Dashboard', role: 'start', with: dashboard}">
+    dashboard
+    <div data-bind="text: pageTitle"></div>
+  </div>
+  <div data-bind="page: {id: 'page2', title: 'Page2'}">
+    page2
   </div>
 </div>
 <!-- Scripts -->
-<script src="${request.static_url('questy:static/js/libs/jquery.min.js')}"></script>
-<script src="${request.static_url('questy:static/js/libs/bootstrap.min.js')}"></script>
-<script src="${request.static_url('questy:static/js/app.js')}"></script>
+<script type="text/javascript" src="${request.static_url('questy:static/js/libs/jquery.min.js')}"></script>
+<script type="text/javascript" src="${request.static_url('questy:static/js/libs/bootstrap.min.js')}"></script>
+<script type="text/javascript" src="${request.static_url('questy:static/js/app.js')}"></script>
 </body>
 </html>
