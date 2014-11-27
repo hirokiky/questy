@@ -2,11 +2,7 @@ var $ = require('jquery');
 var ko = require('knockout');
 var pager = require('pagerjs');
 
-
-var dashboardViewModel = function() {
-  var self = this;
-  self.pageTitle = ko.observable('dashboard page');
-};
+var dashboardViewModel = require('./viewmodels/dashboardViewModel.js');
 
 $(function() {
   var viewModel = {
