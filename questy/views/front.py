@@ -4,10 +4,10 @@ from pyramid.view import view_config
 
 @view_config(
     route_name='top',
-    renderer='questy:templates/dashboard.mako',
+    renderer='questy:templates/frontapp.mako',
     effective_principals=(security.Authenticated,)
 )
-def dashboard(request):
+def frontapp(request):
     return {}
 
 

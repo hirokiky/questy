@@ -43,8 +43,6 @@ def main(global_config, **settings):
     config.add_renderer('json', json_renderer)
 
     config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('login', '/login/')
-    config.add_route('logout', '/logout/')
 
     # api
     config.add_route('achievements', '/api/achievements')
@@ -62,6 +60,8 @@ def main(global_config, **settings):
     config.add_route('followers', '/api/users/{user_id:\d+}/followers')
     config.add_route('followings', '/api/users/{user_id:\d+}/followings')
 
+    config.add_route('login', '/login/')
+    config.add_route('logout', '/logout/')
     config.add_route('top', '/*path')
 
     config.scan()
