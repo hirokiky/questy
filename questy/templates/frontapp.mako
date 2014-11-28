@@ -40,8 +40,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  <div data-bind="page: {id: 'dashboard', title: 'Dashboard', role: 'start',
-                         with: dashboard, sourceOnShow: '${request.static_url('questy:static/views/dashboard.html')}'}"></div>
+  <div data-bind="page: dashboard"></div>
   <div data-bind="page: {id: 'page2', title: 'Page2'}">
     page2
   </div>

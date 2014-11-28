@@ -12,7 +12,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            historyjs: 'historyjs/scripts/bundled-uncompressed/html4+html5/native.history.js'
+            historyjs: 'historyjs/scripts/bundled-uncompressed/html4+html5/native.history.js',
+            config: path.join(__dirname, 'webfront/js/config/dev.js')
         }
     },
     module: {
