@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: "./webfront/js/questy.js",
     output: {
-        path: path.join(__dirname, 'questy/static/js/'),
+        path: path.join(__dirname, 'webfront/public/static/js/'),
         filename: "app.js"
     },
     resolveLoader: {

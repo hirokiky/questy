@@ -42,8 +42,6 @@ def main(global_config, **settings):
     json_renderer.add_adapter(datetime, renderers.datetime_adapter)
     config.add_renderer('json', json_renderer)
 
-    config.add_static_view('static', 'static', cache_max_age=3600)
-
     # api
     config.add_route('achievements', '/api/achievements')
     config.add_route('achievement', '/api/achievements/{achievement_id:\d+}')

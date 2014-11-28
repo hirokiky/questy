@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="${request.locale_name}">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Kaede Studios">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="${request.static_url('questy:static/css/bootstrap.css')}" />
-  <link rel="stylesheet" href="${request.static_url('questy:static/css/nonresp.css')}" />
-  <link rel="stylesheet" href="${request.static_url('questy:static/css/main.css')}" />
+  <link rel="stylesheet" href="static/css/bootstrap.css" />
+  <link rel="stylesheet" href="static/css/nonresp.css" />
+  <link rel="stylesheet" href="static/css/main.css" />
 
   <title></title>
 
@@ -15,7 +15,6 @@
 <body>
 
 <div class="container">
-  ## Global Header
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -33,7 +32,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Setting</a></li>
             <li class="divider"></li>
-            <li><a href="${request.route_path('logout')}">Logout</a></li>
+            <li><a href="/logout/">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -46,8 +45,8 @@
   </div>
 </div>
 <!-- Scripts -->
-<script type="text/javascript" src="${request.static_url('questy:static/js/libs/jquery.min.js')}"></script>
-<script type="text/javascript" src="${request.static_url('questy:static/js/libs/bootstrap.min.js')}"></script>
-<script type="text/javascript" src="${request.static_url('questy:static/js/app.js')}"></script>
+<script type="text/javascript" src="static/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/libs/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/app.js"></script>
 </body>
 </html>
