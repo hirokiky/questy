@@ -3,10 +3,12 @@ var ko = require('knockout');
 var pager = require('pagerjs');
 
 var dashboardPage = require('./pages/dashboardPage.js');
+var arrivePage = require('./pages/arrivePage.js');
 
 $(function() {
   var viewModel = {
-    dashboard: dashboardPage
+    dashboard: dashboardPage,
+    arrive: arrivePage
   };
 
   pager.extendWithPage(viewModel);
